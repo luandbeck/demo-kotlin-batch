@@ -1,0 +1,17 @@
+spring:
+  batch:
+    job:
+      enabled: false
+      names: importTransaction, importTransactionAsync
+      default: ${SPRING_BATCH_JOB_NAME:importTransaction}
+    jdbc:
+      initialize-schema: always #Cria automatico as tabelas do spring-batch
+  jpa:
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    hibernate:
+      ddl-auto: create # Esta propriedade indica para criar as tabelas automaticamente
+
+  datasource:
+    url: jdbc:postgresql://localhost:5432/postgres
+    username: postgres
+    password: minhaSenha

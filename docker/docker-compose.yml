@@ -1,0 +1,15 @@
+version: '3.8'
+services:
+  meu-postgres:
+    image: postgres
+    container_name: meu-postgres
+    environment:
+      POSTGRES_PASSWORD: minhaSenha
+    ports:
+      - "5432:5432"
+    networks:
+      - meu-network
+
+networks:
+  meu-network:
+    driver: bridge
